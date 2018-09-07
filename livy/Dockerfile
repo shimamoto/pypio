@@ -8,6 +8,8 @@ ENV lIVY_VERSION 0.5.0-incubating
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV SPARK_HOME /spark
 
+ARG SPARK_MASTER
+
 RUN apt-get update \
     && apt-get install -y --auto-remove --no-install-recommends curl git vim zip unzip openjdk-8-jdk libgfortran3 python-pip \
     && apt-get clean \
