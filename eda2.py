@@ -113,3 +113,5 @@ evaluator = RegressionEvaluator(labelCol="label", predictionCol="prediction", me
 rmse = evaluator.evaluate(predict_df)
 print("Root Mean Squared Error (RMSE) on test data = %g" % rmse)
 
+
+#pypio.save(model)
