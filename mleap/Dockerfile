@@ -1,7 +1,7 @@
 FROM ubuntu
 MAINTAINER shimamoto
 
-ENV SPARK_VERSION 2.2.2
+ENV SPARK_VERSION 2.3.2
 ENV HADOOP_VERSION hadoop2.7
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
