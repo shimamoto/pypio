@@ -17,17 +17,6 @@ services:
       - "8081:8081"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
-#  livy:
-#    build:
-#      context: ./livy
-#      args:
-#        - SPARK_MASTER=spark://spark-master:7077
-#    tty: true
-#    container_name: livy
-#    depends_on:
-#      - spark-master
-#    ports:
-#      - "8998:8998"
   mleap:
     build: ./mleap
     tty: true
