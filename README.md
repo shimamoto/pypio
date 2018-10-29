@@ -1,5 +1,30 @@
 # pypio
 
+Prerequisites
+- Python code to specify for the `--main-py-file` option
+  - e.g. eda2.py
+- template.json
+```
+{"pio": {"version": { "min": "0.14.0-SNAPSHOT" }}}
+```
+- engine.json
+```
+{
+  "id": "default",
+  "description": "Default settings",
+  "engineFactory": "org.apache.predictionio.e2.engine.PythonEngine",
+  "algorithms": [
+    {
+      "name": "default",
+      "params": {
+        "name": "BHPApp"
+      }
+    }
+  ]
+}
+```
+
+
 memo
 - Spark Packages
 ```
