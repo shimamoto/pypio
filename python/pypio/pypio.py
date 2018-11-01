@@ -9,7 +9,6 @@ from pyspark.sql import utils
 
 
 def init():
-    print("Initializing pypio")
     global spark
     spark = SparkSession.builder.getOrCreate()
     global sc
@@ -18,6 +17,7 @@ def init():
     sqlContext = spark._wrapped
     global p_event_store
     p_event_store = PEventStore(spark._jsparkSession, sqlContext)
+    print("Initialized pypio")
 
 
 def find(app_name):

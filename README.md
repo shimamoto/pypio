@@ -2,7 +2,9 @@
 
 Prerequisites
 - Python code to specify for the `--main-py-file` option
-  - e.g. eda2.py
+  - pypio.init()
+  - event_df = pypio.find('BHPApp')
+  - pypio.save(model)
 - template.json
 ```
 {"pio": {"version": { "min": "0.14.0-SNAPSHOT" }}}
