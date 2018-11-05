@@ -1,9 +1,11 @@
 
 from __future__ import absolute_import
 
+import os
 import sys
 
 from pypio.data import PEventStore
+from pyspark.files import SparkFiles
 from pyspark.sql import SparkSession
 from pyspark.sql import utils
 
@@ -36,6 +38,20 @@ def save(model):
     create_workflow.main(main_args)
 
 
-def import_file(path=None, destination_frame=None, parse=True, header=0, sep=None, col_names=None, col_types=None,
+def import_file(path, destination_frame=None, parse=True, header=None, sep=None, col_names=None, col_types=None,
                 na_strings=None, pattern=None):
+    basename = os.path.basename(path)
+
+    if basename.endswith('.csv'):
+        sc.addFile(path)
+        df = spark.read.csv(SparkFiles.get(basename), header=header)
+    elif basename.endswith('.json'):
+        sc.addFile(path)
+        df = spark.read.json(SparkFiles.get(basename))
+    else:
+        raise ValueError("")
+
+#    df.foreach(lambda x: print(x.asDict(True)))
+
+
     print("TODO")
