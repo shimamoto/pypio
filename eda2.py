@@ -35,7 +35,7 @@ pypio.init()
 # In[4]:
 
 
-event_df = pypio.find('BHPApp')
+event_df = pypio.find_events('BHPApp')
 
 
 # In[5]:
@@ -114,4 +114,4 @@ rmse = evaluator.evaluate(predict_df)
 print("Root Mean Squared Error (RMSE) on test data = %g" % rmse)
 
 
-pypio.save(model)
+pypio.save_model(model)
