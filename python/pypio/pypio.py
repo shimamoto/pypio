@@ -122,6 +122,9 @@ def import_file(path, destination_frame=None, parse=True, header=None, sep=None,
         raise ValueError("")
 
 #    df.foreach(lambda x: print(x.asDict(True)))
+#    App.show(appName)
+#    val eventClient = Storage.getPEvents()
+#    eventClient.write(events: RDD[Event], appId: Int)(sc: SparkContext)
 
 
     print("TODO")
