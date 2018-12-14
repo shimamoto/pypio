@@ -110,6 +110,7 @@ def save_model(model, predict_columns):
 
 def import_file(path, destination_frame=None, parse=True, header=None, sep=None, col_names=None, col_types=None,
                 na_strings=None, pattern=None):
+    from pyspark.files import SparkFiles
     basename = os.path.basename(path)
 
     if basename.endswith('.csv'):
