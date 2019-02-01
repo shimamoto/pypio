@@ -19,6 +19,6 @@ object Start extends App {
   AkkaManagement(system).start()
   ClusterBootstrap(system).start()
 
-  Http().bindAndHandle(complete(config.getString("application.api.hello-message")), config.getString("application.api.host"), config.getInt("application.api.port"))
+  Http().bindAndHandle(new api.Route(cluster.selfUniqueAddress.longUid).route, config.getString("application.api.host"), config.getInt("application.api.port"))
 
 }
